@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+  <thead>
+     <tr>
+        <th>Sr No.</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Address</th>
+    
+
+     </tr>
+  </thead>
+  <tbody *ngIf="data.length > 0;else nodatafound">
+    <tr *ngFor="let stud of data;let i=index">
+      <td>{{i+1}}</td>
+      <td>{{stud.name}}</td>
+      <td>{{stud.contact}}</td>
+      <td>{{stud.address}}</td>
+      <td><button class="btn btn-warning" (click)="editItem(stud,i)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="deleteItem(i)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
